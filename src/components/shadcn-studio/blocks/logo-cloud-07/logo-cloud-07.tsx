@@ -86,7 +86,7 @@ const LogoCloud = ({ logos }: { logos: Logos[] }) => {
               </Orbiting>
 
               <div className="absolute left-1/2 top-1/2 flex h-32 w-32 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-primary/10 bg-white shadow-[0_16px_50px_rgba(11,45,57,0.12)]">
-                <img src={`${import.meta.env.BASE_URL}images/solutions/logo_monte.svg`} alt="Monte Sião" className="h-12 w-auto" />
+                <img src="/images/solutions/logo_monte.svg" alt="Monte Sião" className="h-12 w-auto" />
               </div>
             </div>
           </MotionPreset>
