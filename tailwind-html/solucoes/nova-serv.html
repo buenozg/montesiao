@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Serv | Equipamentos biomédicos e manutenção</title>
+  <meta name="description" content="Conheça a Nova Serv, solução da Monte Sião para manutenção de equipamentos biomédicos e suporte técnico." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f3a46',
+            'primary-dark': '#0b2d39',
+            accent: '#d8b24a'
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(9, 36, 45, 0.12)',
+            panel: '0 20px 45px rgba(11, 45, 57, 0.14)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .shell { max-width: 80rem; margin-inline: auto; padding-inline: 1.5rem; }
+    .panel { border-radius: 1.5rem; border: 1px solid rgba(148, 163, 184, .25); background: rgba(255,255,255,.9); box-shadow: 0 24px 60px rgba(9, 36, 45, 0.12); }
+    .panel-dark { border-radius: 1.5rem; border: 1px solid rgba(255,255,255,.15); background: #0f3a46; color: white; box-shadow: 0 20px 45px rgba(11, 45, 57, 0.14); }
+    .section-space { padding-top: 5rem; padding-bottom: 5rem; }
+    .eyebrow { display:inline-flex; align-items:center; border-radius:9999px; border:1px solid rgba(216,178,74,.35); background: rgba(216,178,74,.12); padding:.5rem 1rem; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#b5850d; }
+    .title-display { font-size: clamp(2rem, 3.8vw, 3.6rem); line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; }
+    .section-title { font-size: clamp(1.55rem, 2.8vw, 2.4rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+    body { background: radial-gradient(circle at 5% 0%, rgba(216,178,74,.12), transparent 20%), radial-gradient(circle at 90% 10%, rgba(15,58,70,.08), transparent 22%), #f8fafc; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-white/80 bg-white/85 backdrop-blur">
+    <div class="shell flex min-h-20 items-center justify-between gap-6">
+      <a href="/index.html" class="flex items-center gap-3" aria-label="Ir para home">
+        <img src="/images/solutions/logo_monte.svg" alt="Monte Sião" class="h-12 w-auto" />
+      </a>
+      <nav class="hidden items-center gap-2 lg:flex" aria-label="Principal"><a href="/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Home</a><a href="/sobre.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Sobre</a><a href="/solucoes/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-100 text-primary">Soluções</a><a href="/contato.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Contato</a></nav>
+      <a href="/contato.html" class="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-dark lg:inline-flex">Fale com a Monte Sião</a>
+      <details class="relative lg:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-primary">
+          <span class="text-xl">≡</span>
+        </summary>
+        <nav class="absolute right-0 top-12 grid min-w-52 gap-1 rounded-2xl border border-slate-200 bg-white p-2 shadow-panel"><a href="/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Home</a><a href="/sobre.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Sobre</a><a href="/solucoes/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-100 text-primary">Soluções</a><a href="/contato.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Contato</a></nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+      <section class="bg-primary text-white">
+        <div class="shell grid gap-10 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
+          <div>
+            <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-amber-200">Infraestrutura</span>
+            <h1 class="title-display mt-6">Nova Serv</h1>
+            <p class="mt-4 max-w-2xl text-lg leading-8 text-white/80">A Nova Serv atua na manutenção e disponibilidade de equipamentos biomédicos, reforçando segurança operacional e continuidade assistencial.</p>
+            <div class="mt-5 flex flex-wrap gap-2"><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Equipamentos biomédicos</span><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Manutenção</span><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Suporte técnico</span></div>
+          </div>
+          <div class="panel-dark p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Tagline institucional</p>
+            <h2 class="mt-4 text-2xl">Sustentação técnica para ambientes de saúde com alta exigência operacional.</h2>
+            <p class="mt-4 text-sm leading-7 text-white/75">A solução organiza manutenção, suporte e leitura do parque biomédico com foco em eficiência técnica, rastreabilidade e aderência operacional.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space">
+        <div class="shell grid gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+          <div>
+            <span class="eyebrow">Descrição institucional</span>
+            <h2 class="section-title mt-5">Uma frente crítica para preservar disponibilidade, segurança e confiança no ambiente técnico.</h2>
+            <p class="mt-5 text-base leading-8 text-slate-600">A solução organiza manutenção, suporte e leitura do parque biomédico com foco em eficiência técnica, rastreabilidade e aderência operacional.</p>
+            <div class="mt-6"><p class="mt-4 text-base leading-8 text-slate-600">Nova Serv responde a uma necessidade central de ambientes assistenciais: manter ativos críticos em condições adequadas de operação, com histórico, manutenção e resposta técnica coerentes com o nível de exigência do contexto.</p>
+<p class="mt-4 text-base leading-8 text-slate-600">Sua atuação reforça segurança operacional, previsibilidade e sustentação contínua da infraestrutura biomédica.</p></div>
+          </div>
+          <div class="grid gap-5 md:grid-cols-2">
+            <article class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Frente</p><h3 class="mt-3 text-xl font-semibold">Manutenção preventiva</h3><p class="mt-3 text-sm leading-7 text-slate-600">Rotinas estruturadas para ampliar vida útil, reduzir falhas e preservar disponibilidade.</p></article><article class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Frente</p><h3 class="mt-3 text-xl font-semibold">Manutenção corretiva</h3><p class="mt-3 text-sm leading-7 text-slate-600">Resposta técnica para reduzir indisponibilidades e recompor capacidade operacional.</p></article><article class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Frente</p><h3 class="mt-3 text-xl font-semibold">Gestão de parque biomédico</h3><p class="mt-3 text-sm leading-7 text-slate-600">Organização de ativos, histórico técnico e planejamento de suporte.</p></article><article class="panel p-6"><p class="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">Frente</p><h3 class="mt-3 text-xl font-semibold">Apoio técnico especializado</h3><p class="mt-3 text-sm leading-7 text-slate-600">Acompanhamento profissional para ambientes assistenciais de maior criticidade.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space pt-0">
+        <div class="shell">
+          <div class="panel-dark px-6 py-7">
+            <div class="flex flex-wrap gap-2"><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Disponibilidade técnica</span><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Rastreabilidade</span><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Segurança operacional</span><span class="rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium">Ambientes assistenciais</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space pt-0">
+        <div class="shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <span class="eyebrow">Indicadores visuais</span>
+            <h2 class="section-title mt-5">Sinais de capacidade, cobertura e especialização.</h2>
+            <p class="mt-4 text-base leading-8 text-slate-600">Indicadores que sintetizam a proposta institucional da solução.</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <article class="panel p-6 text-center"><p class="text-3xl font-bold text-primary">SLA</p><p class="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">foco em resposta</p></article><article class="panel p-6 text-center"><p class="text-3xl font-bold text-primary">BIO</p><p class="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">especialização técnica</p></article><article class="panel p-6 text-center"><p class="text-3xl font-bold text-primary">24/7</p><p class="mt-2 text-xs uppercase tracking-[0.2em] text-slate-500">prontidão operacional</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-space pt-0">
+        <div class="shell grid gap-6 md:grid-cols-3">
+          <article class="panel p-6"><h3 class="text-xl font-semibold">Especialização biomédica</h3><p class="mt-3 text-sm leading-7 text-slate-600">Conhecimento técnico orientado às exigências do ambiente assistencial.</p></article><article class="panel p-6"><h3 class="text-xl font-semibold">Continuidade operacional</h3><p class="mt-3 text-sm leading-7 text-slate-600">Suporte planejado para reduzir impacto de falhas e preservar rotinas críticas.</p></article><article class="panel p-6"><h3 class="text-xl font-semibold">Gestão estruturada</h3><p class="mt-3 text-sm leading-7 text-slate-600">Organização de histórico, manutenção e indicadores para maior previsibilidade.</p></article>
+        </div>
+      </section>
+
+      <section class="section-space pt-0">
+        <div class="shell grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+          <div class="overflow-hidden rounded-[2rem] border border-slate-200 bg-primary/5"><img src="/images/solutions/infrastructure.svg" alt="Visual abstrato institucional para manutenção de equipamentos biomédicos." class="h-full w-full object-cover" /></div>
+          <div class="panel p-8">
+            <span class="eyebrow">Próxima conversa</span>
+            <h2 class="section-title mt-5">Estruture seu parque biomédico com mais disponibilidade e controle.</h2>
+            <p class="mt-4 text-base leading-8 text-slate-600">A Nova Serv fortalece ambientes assistenciais que dependem de confiabilidade técnica e resposta rápida.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="/contato.html" class="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white">Falar sobre Nova Serv</a>
+              <a href="/solucoes/index.html" class="rounded-full border border-primary/20 px-6 py-3 text-sm font-semibold text-primary hover:bg-slate-100">Ver outras soluções</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <footer class="mt-20 bg-primary-dark text-white">
+    <div class="shell py-14">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div class="md:col-span-2">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Ecossistema institucional integrado</p>
+          <p class="mt-4 max-w-2xl text-sm leading-7 text-white/75">Holding com visão integrada e atuação multissetorial, conectando governança, operação e sustentação de serviços essenciais.</p>
+        </div>
+        <div class="space-y-2 text-sm text-white/80">
+          <p><a class="hover:text-white" href="mailto:relacionamento@montesiao.com.br">relacionamento@montesiao.com.br</a></p>
+          <p><a class="hover:text-white" href="tel:+551140002407">+55 (11) 4000-2407</a></p>
+          <p>São Paulo, SP · Brasil</p>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-white/10 pt-5 text-xs text-white/60">Monte Sião Holding · <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+</body>
+</html>

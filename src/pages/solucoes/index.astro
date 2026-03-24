@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+
+import CtaBand from '../../components/sections/CtaBand.astro';
+import Container from '../../components/ui/Container.astro';
+import SectionIntro from '../../components/ui/SectionIntro.astro';
+import SolutionCard from '../../components/ui/SolutionCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const segmentOrder = ['Saude', 'Tecnologia', 'Infraestrutura', 'Financas', 'Logistica'] as const;
+
+const segmentLabels = {
+  Saude: 'Saúde',
+  Tecnologia: 'Tecnologia',
+  Infraestrutura: 'Infraestrutura',
+  Financas: 'Finanças',
+  Logistica: 'Logística',
+} as const;
+
+const segmentDescriptions = {
+  Saude: 'Soluções em assistência, operação clínica, telemedicina, benefícios e diagnósticos.',
+  Tecnologia: 'Frentes de infraestrutura tecnológica, ERP, consultoria e continuidade sistêmica.',
+  Infraestrutura: 'Equipamentos, manutenção técnica, sustentação predial e higienização.',
+  Financas: 'Soluções financeiras para ampliar fôlego, integração e inteligência transacional.',
+  Logistica: 'Mobilidade corporativa, locação e suporte operacional com alta disponibilidade.',
+} as const;
+
+const solutions = (await getCollection('solutions')).sort((a, b) => a.data.order - b.data.order);
+
+const groupedSolutions = segmentOrder.map((segment) => ({
+  segment,
+  items: solutions.filter((solution) => solution.data.segment === segment),
+}));
+---
+
+<BaseLayout
+  title="Soluções | Ecossistema Monte Sião"
+  description="Conheça o ecossistema de soluções da Monte Sião, organizado por segmento e estruturado para atender operações com visão integrada."
+>
+  <section class="bg-primary text-white">
+    <Container>
+      <div class="py-20 md:py-24">
+        <span class="inline-flex rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
+          Ecossistema de soluções
+        </span>
+        <h1 class="title-display mt-7 max-w-4xl text-white">Empresas e soluções organizadas por segmento, integradas por uma visão institucional única.</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-white/74">
+          O portfólio Monte Sião foi estruturado para atender demandas complexas com especialização técnica, consistência operacional e leitura estratégica compartilhada.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space">
+    <Container>
+      <SectionIntro
+        eyebrow="Portfólio"
+        title="Cada solução opera com identidade própria e conexão real com o ecossistema."
+        description="A organização por segmento facilita leitura institucional, navegação e evolução futura do conteúdo."
+      />
+
+      <div class="mt-12 space-y-16">
+        {
+          groupedSolutions.map((group) => (
+            <section aria-labelledby={`segmento-${group.segment}`}>
+              <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <div>
+                  <h2 id={`segmento-${group.segment}`} class="section-title">{segmentLabels[group.segment]}</h2>
+                  <p class="mt-3 max-w-3xl text-sm leading-7 text-text-soft">{segmentDescriptions[group.segment]}</p>
+                </div>
+                <p class="text-sm font-medium text-text-soft">{group.items.length} soluções</p>
+              </div>
+
+              <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                {group.items.map((solution) => <SolutionCard solution={{ slug: solution.id, data: solution.data }} />)}
+              </div>
+            </section>
+          ))
+        }
+      </div>
+    </Container>
+  </section>
+
+  <CtaBand
+    title="Precisa conectar diferentes frentes operacionais em uma visão unificada?"
+    description="A Monte Sião integra soluções complementares para apoiar operações com mais previsibilidade, capacidade de resposta e escala."
+    primaryHref="/contato"
+    primaryLabel="Falar com o time institucional"
+    secondaryHref="/sobre"
+    secondaryLabel="Ver posicionamento"
+  />
+</BaseLayout>

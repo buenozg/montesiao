@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+
+import AboutPreview from '../components/sections/AboutPreview.astro';
+import CtaBand from '../components/sections/CtaBand.astro';
+import DifferentialsGrid from '../components/sections/DifferentialsGrid.astro';
+import HeroVideo from '../components/sections/HeroVideo.astro';
+import SegmentsGrid from '../components/sections/SegmentsGrid.astro';
+import SolutionsOverview from '../components/sections/SolutionsOverview.astro';
+import StatsStrip from '../components/sections/StatsStrip.astro';
+import ValuesGrid from '../components/sections/ValuesGrid.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { differentiators, homeHighlights, metrics, segments, values } from '../data/institutional';
+
+const solutions = (await getCollection('solutions'))
+  .slice(0, 6)
+  .map((solution) => ({ slug: solution.id, data: solution.data }));
+---
+
+<BaseLayout
+  title="Monte Sião | Holding com visão integrada e atuação multissetorial"
+  description="Monte Sião é uma holding com governança unificada, operação contínua e ecossistema integrado de soluções em saúde, tecnologia, infraestrutura, finanças e logística."
+>
+  <HeroVideo />
+  {/* <ClientLogoCloudSection /> */}
+  <AboutPreview highlights={homeHighlights} />
+  <ValuesGrid values={values} />
+  <StatsStrip metrics={metrics} />
+  <SegmentsGrid segments={segments} />
+  <SolutionsOverview solutions={solutions} />
+  <DifferentialsGrid differentiators={differentiators} />
+  <CtaBand
+    title="Conecte sua operação a um ecossistema capaz de sustentar crescimento com governança, eficiência e continuidade."
+    description="A Monte Sião integra competências críticas para operações complexas. Estruture novas frentes, fortaleça serviços essenciais e amplie escala com uma base institucional sólida."
+    primaryHref="/contato"
+    primaryLabel="Iniciar conversa institucional"
+    secondaryHref="/sobre"
+    secondaryLabel="Conhecer a holding"
+  />
+</BaseLayout>

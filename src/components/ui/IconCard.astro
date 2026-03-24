@@ -1,0 +1,44 @@
+---
+import IconGlyph from './IconGlyph.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  icon:
+    | 'shield'
+    | 'network'
+    | 'scaling'
+    | 'clock'
+    | 'check'
+    | 'pulse'
+    | 'server'
+    | 'building'
+    | 'finance'
+    | 'truck'
+    | 'spark'
+    | 'flask';
+  dark?: boolean;
+}
+
+const { title, description, icon, dark = false } = Astro.props;
+---
+
+<article
+  class:list={[
+    'rounded-3xl border p-6 transition duration-200',
+    dark
+      ? 'border-white/10 bg-white/6 text-white'
+      : 'border-primary/8 bg-white/90 text-text shadow-[--shadow-soft]',
+  ]}
+>
+  <div
+    class:list={[
+      'mb-5 inline-flex rounded-2xl p-3',
+      dark ? 'bg-white/10 text-accent-soft' : 'bg-primary/8 text-primary',
+    ]}
+  >
+    <IconGlyph name={icon} className="size-5" />
+  </div>
+  <h3 class:list={['text-xl', dark && 'text-white']}>{title}</h3>
+  <p class:list={['mt-3 text-sm leading-7', dark ? 'text-white/72' : 'text-text-soft']}>{description}</p>
+</article>

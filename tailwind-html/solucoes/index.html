@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soluções | Ecossistema Monte Sião</title>
+  <meta name="description" content="Conheça o ecossistema de soluções da Monte Sião, organizado por segmento e estruturado para atender operações com visão integrada." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0f3a46',
+            'primary-dark': '#0b2d39',
+            accent: '#d8b24a'
+          },
+          boxShadow: {
+            soft: '0 24px 60px rgba(9, 36, 45, 0.12)',
+            panel: '0 20px 45px rgba(11, 45, 57, 0.14)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .shell { max-width: 80rem; margin-inline: auto; padding-inline: 1.5rem; }
+    .panel { border-radius: 1.5rem; border: 1px solid rgba(148, 163, 184, .25); background: rgba(255,255,255,.9); box-shadow: 0 24px 60px rgba(9, 36, 45, 0.12); }
+    .panel-dark { border-radius: 1.5rem; border: 1px solid rgba(255,255,255,.15); background: #0f3a46; color: white; box-shadow: 0 20px 45px rgba(11, 45, 57, 0.14); }
+    .section-space { padding-top: 5rem; padding-bottom: 5rem; }
+    .eyebrow { display:inline-flex; align-items:center; border-radius:9999px; border:1px solid rgba(216,178,74,.35); background: rgba(216,178,74,.12); padding:.5rem 1rem; font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#b5850d; }
+    .title-display { font-size: clamp(2rem, 3.8vw, 3.6rem); line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; }
+    .section-title { font-size: clamp(1.55rem, 2.8vw, 2.4rem); line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+    body { background: radial-gradient(circle at 5% 0%, rgba(216,178,74,.12), transparent 20%), radial-gradient(circle at 90% 10%, rgba(15,58,70,.08), transparent 22%), #f8fafc; }
+  </style>
+</head>
+<body class="text-slate-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-white/80 bg-white/85 backdrop-blur">
+    <div class="shell flex min-h-20 items-center justify-between gap-6">
+      <a href="/index.html" class="flex items-center gap-3" aria-label="Ir para home">
+        <img src="/images/solutions/logo_monte.svg" alt="Monte Sião" class="h-12 w-auto" />
+      </a>
+      <nav class="hidden items-center gap-2 lg:flex" aria-label="Principal"><a href="/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Home</a><a href="/sobre.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Sobre</a><a href="/solucoes/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-100 text-primary">Soluções</a><a href="/contato.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Contato</a></nav>
+      <a href="/contato.html" class="hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-dark lg:inline-flex">Fale com a Monte Sião</a>
+      <details class="relative lg:hidden">
+        <summary class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-xl border border-slate-200 bg-white text-primary">
+          <span class="text-xl">≡</span>
+        </summary>
+        <nav class="absolute right-0 top-12 grid min-w-52 gap-1 rounded-2xl border border-slate-200 bg-white p-2 shadow-panel"><a href="/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Home</a><a href="/sobre.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Sobre</a><a href="/solucoes/index.html" class="rounded-full px-4 py-2 text-sm font-medium transition bg-slate-100 text-primary">Soluções</a><a href="/contato.html" class="rounded-full px-4 py-2 text-sm font-medium transition text-slate-600 hover:bg-slate-100 hover:text-primary">Contato</a></nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+      <section class="bg-primary text-white">
+        <div class="shell py-20 md:py-24">
+          <span class="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-amber-200">Ecossistema de soluções</span>
+          <h1 class="title-display mt-6 max-w-4xl">Empresas e soluções organizadas por segmento, integradas por uma visão institucional única.</h1>
+          <p class="mt-5 max-w-3xl text-lg leading-8 text-white/80">O portfólio Monte Sião foi estruturado para atender demandas complexas com especialização técnica e consistência operacional.</p>
+        </div>
+      </section>
+
+      <section class="section-space">
+        <div class="shell space-y-14">
+          <section>
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 class="section-title">Saúde</h2>
+                    <p class="mt-2 text-sm text-slate-600">Soluções em assistência, operação clínica, telemedicina, benefícios e diagnósticos.</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-500">4 soluções</p>
+                </div>
+                <div class="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Betel Saúde</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Cartão de benefícios em saúde e telemedicina com proposta acessível, contínua e orientada à conveniência.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Telemedicina</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Benefícios</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Acesso em saúde</span></div>
+                        <a href="/solucoes/betel-saude.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article><article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Medintegra</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Equipes médicas, plantões e sustentação assistencial 24/7 para operações que exigem resposta contínua.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Equipes médicas</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Plantões</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Sustentação assistencial</span></div>
+                        <a href="/solucoes/medintegra.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article><article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">MED 247</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Serviços médicos e educação continuada para apoiar qualificação técnica, atualização e sustentação de práticas assistenciais.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Serviços médicos</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Educação continuada</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Qualificação</span></div>
+                        <a href="/solucoes/med-247.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article><article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Lab Mais Vida</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Diagnósticos laboratoriais com foco em precisão, agilidade e apoio à continuidade assistencial.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Diagnósticos laboratoriais</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Precisão</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Apoio assistencial</span></div>
+                        <a href="/solucoes/lab-mais-vida.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article>
+                </div>
+              </section><section>
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 class="section-title">Tecnologia</h2>
+                    <p class="mt-2 text-sm text-slate-600">Frentes de infraestrutura tecnológica, ERP, consultoria e continuidade sistêmica.</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-500">2 soluções</p>
+                </div>
+                <div class="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Canadá</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Infraestrutura de TI e equipamentos para sustentar continuidade, disponibilidade e eficiência técnica.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Infraestrutura de TI</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Equipamentos</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Continuidade</span></div>
+                        <a href="/solucoes/canada.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article><article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Triple T Sys</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">ERP TOTVS e consultoria em TI para integração de processos, gestão e eficiência sistêmica.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">ERP TOTVS</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Consultoria em TI</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Integração de processos</span></div>
+                        <a href="/solucoes/triple-t-sys.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article>
+                </div>
+              </section><section>
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 class="section-title">Infraestrutura</h2>
+                    <p class="mt-2 text-sm text-slate-600">Equipamentos, manutenção técnica, sustentação predial e higienização.</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-500">2 soluções</p>
+                </div>
+                <div class="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Nova Serv</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Equipamentos biomédicos e manutenção com foco em disponibilidade técnica e sustentação assistencial.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Equipamentos biomédicos</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Manutenção</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Suporte técnico</span></div>
+                        <a href="/solucoes/nova-serv.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article><article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">IZM</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Manutenção predial e higienização com abordagem operacional, preventiva e orientada à continuidade.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Manutenção predial</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Higienização</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Sustentação operacional</span></div>
+                        <a href="/solucoes/izm.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article>
+                </div>
+              </section><section>
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 class="section-title">Finanças</h2>
+                    <p class="mt-2 text-sm text-slate-600">Soluções financeiras para ampliar fôlego, integração e inteligência transacional.</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-500">1 soluções</p>
+                </div>
+                <div class="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">SPX Bank</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Fintech e soluções financeiras para apoiar liquidez, integração e inteligência transacional.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Fintech</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Soluções financeiras</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Inteligência transacional</span></div>
+                        <a href="/solucoes/spx-bank.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article>
+                </div>
+              </section><section>
+                <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                  <div>
+                    <h2 class="section-title">Logística</h2>
+                    <p class="mt-2 text-sm text-slate-600">Mobilidade corporativa, locação e suporte operacional com alta disponibilidade.</p>
+                  </div>
+                  <p class="text-sm font-medium text-slate-500">1 soluções</p>
+                </div>
+                <div class="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  <article class="panel p-6">
+                        <h3 class="text-2xl font-semibold">Alfacar</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-600">Locação e transportes para apoiar mobilidade corporativa, logística e disponibilidade operacional.</p>
+                        <div class="mt-4 flex flex-wrap gap-2"><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Locação</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Transportes</span><span class="rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600">Mobilidade corporativa</span></div>
+                        <a href="/solucoes/alfacar.html" class="mt-6 inline-flex rounded-full border border-primary/20 px-5 py-2.5 text-sm font-semibold text-primary hover:bg-slate-100">Ver solução</a>
+                      </article>
+                </div>
+              </section>
+        </div>
+      </section>
+    </main>
+
+  <footer class="mt-20 bg-primary-dark text-white">
+    <div class="shell py-14">
+      <div class="grid gap-10 md:grid-cols-3">
+        <div class="md:col-span-2">
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-amber-300">Ecossistema institucional integrado</p>
+          <p class="mt-4 max-w-2xl text-sm leading-7 text-white/75">Holding com visão integrada e atuação multissetorial, conectando governança, operação e sustentação de serviços essenciais.</p>
+        </div>
+        <div class="space-y-2 text-sm text-white/80">
+          <p><a class="hover:text-white" href="mailto:relacionamento@montesiao.com.br">relacionamento@montesiao.com.br</a></p>
+          <p><a class="hover:text-white" href="tel:+551140002407">+55 (11) 4000-2407</a></p>
+          <p>São Paulo, SP · Brasil</p>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-white/10 pt-5 text-xs text-white/60">Monte Sião Holding · <span id="year"></span></div>
+    </div>
+  </footer>
+
+  <script src="/assets/main.js"></script>
+</body>
+</html>

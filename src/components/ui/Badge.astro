@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  inverse?: boolean;
+}
+
+const { label, inverse = false } = Astro.props;
+---
+
+<span
+  class:list={[
+    'inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium tracking-wide',
+    inverse
+      ? 'border-white/12 bg-white/8 text-white/82'
+      : 'border-primary/10 bg-white text-text-soft',
+  ]}
+>
+  {label}
+</span>

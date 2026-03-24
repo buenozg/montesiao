@@ -1,0 +1,21 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  dark?: boolean;
+}
+
+const { value, label, dark = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    'rounded-3xl border px-5 py-6',
+    dark ? 'border-white/10 bg-white/7 text-white' : 'border-primary/8 bg-surface',
+  ]}
+>
+  <p class:list={['text-3xl font-display', dark ? 'text-white' : 'text-primary']}>{value}</p>
+  <p class:list={['mt-2 text-sm uppercase tracking-[0.2em]', dark ? 'text-white/68' : 'text-text-soft']}>
+    {label}
+  </p>
+</div>

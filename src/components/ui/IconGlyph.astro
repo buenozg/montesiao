@@ -1,0 +1,49 @@
+---
+interface Props {
+  name:
+    | 'shield'
+    | 'network'
+    | 'scaling'
+    | 'clock'
+    | 'check'
+    | 'pulse'
+    | 'server'
+    | 'building'
+    | 'finance'
+    | 'truck'
+    | 'spark'
+    | 'flask';
+  className?: string;
+}
+
+const { name, className = 'size-5' } = Astro.props;
+
+const paths = {
+  shield: 'M12 3l7 3v5c0 4.97-2.982 9.29-7 10-4.018-.71-7-5.03-7-10V6l7-3zm0 4.4L8 9v2.413c0 3.155 1.667 5.937 4 6.801 2.333-.864 4-3.646 4-6.8V9l-4-1.6z',
+  network: 'M5 5h5v5H5V5zm9 0h5v5h-5V5zM9.5 14h5v5h-5v-5zM10 7.5h4M7.5 10v2M16.5 10v2M12 12v2',
+  scaling: 'M4 18h16M7 18V8m5 10V5m5 13v-7',
+  clock: 'M12 7v5l3 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z',
+  check: 'M5 12.5l4.2 4.2L19 7',
+  pulse: 'M3 12h4l2-4 4 8 2-4h6',
+  server: 'M4 6h16v4H4V6zm0 8h16v4H4v-4zm3-6h.01M7 16h.01',
+  building: 'M5 20V6l7-3 7 3v14M9 20v-4h6v4M9 9h.01M9 12h.01M15 9h.01M15 12h.01',
+  finance: 'M4 18h16M7 15l3-3 3 2 4-5',
+  truck: 'M3 7h11v8H3V7zm11 3h3l3 3v2h-6v-5zM7 17a2 2 0 110 4 2 2 0 010-4zm10 0a2 2 0 110 4 2 2 0 010-4z',
+  spark: 'M12 2l2.2 5.8L20 10l-5.8 2.2L12 18l-2.2-5.8L4 10l5.8-2.2L12 2z',
+  flask: 'M10 3h4M11 3v5l-5 8a3 3 0 002.6 4.5h6.8A3 3 0 0018 16l-5-8V3',
+};
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class={className}
+  aria-hidden="true"
+>
+  <path d={paths[name]} />
+</svg>

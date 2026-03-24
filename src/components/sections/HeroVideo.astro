@@ -1,0 +1,105 @@
+---
+import Button from '../ui/Button.astro';
+---
+
+<section
+  id="hero"
+  class="relative flex min-h-svh items-center justify-center overflow-hidden bg-[#050d14]"
+>
+  <!-- Fundo de vídeo -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <video
+      class="h-full w-full object-cover [transform:scale(1.08)] [animation:heroZoom_20s_ease-in-out_infinite_alternate]"
+      src={`${import.meta.env.BASE_URL}videos/0323.mov`}
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      aria-hidden="true"
+    ></video>
+  </div>
+
+  <!-- Gradiente de legibilidade -->
+  <div
+    class="absolute inset-0 z-10"
+    style="background: linear-gradient(to bottom, rgba(5,13,20,0.62) 0%, rgba(5,13,20,0.38) 40%, rgba(5,13,20,0.55) 75%, rgba(5,13,20,0.88) 100%);"
+  ></div>
+  <!-- Vinheta lateral suave -->
+  <div
+    class="absolute inset-0 z-10 hidden lg:block"
+    style="background: radial-gradient(ellipse 80% 100% at 50% 50%, transparent 45%, rgba(5,13,20,0.55) 100%);"
+  ></div>
+
+  <!-- Conteúdo -->
+  <div class="relative z-20 flex w-full flex-col items-center px-6 py-24 text-center sm:px-8 lg:px-10">
+
+    <!-- Label eyebrow -->
+    <div
+      class="hero-fade mb-8 inline-flex items-center gap-2 rounded-full border border-white/18 bg-white/8 px-4 py-2 backdrop-blur-sm"
+      style="animation-delay: 0.1s;"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-[#e7c86d]"></span>
+      <span class="text-xs font-semibold uppercase tracking-[0.22em] text-white/80">
+        Holding Multissetorial
+      </span>
+    </div>
+
+    <!-- Headline principal -->
+    <h1
+      class="hero-fade mx-auto max-w-4xl text-balance text-4xl font-semibold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[64px]"
+      style="animation-delay: 0.22s;"
+    >
+      Integramos operações críticas com inteligência, tecnologia e continuidade.
+    </h1>
+
+    <!-- Subtítulo -->
+    <p
+      class="hero-fade mx-auto mt-6 max-w-2xl text-balance text-base leading-8 text-white/68 sm:text-lg"
+      style="animation-delay: 0.38s;"
+    >
+      Atuamos de forma integrada em saúde, tecnologia, infraestrutura, finanças e logística —
+      garantindo eficiência, previsibilidade e evolução contínua.
+    </p>
+
+    <!-- Botões CTA -->
+    <div
+      class="hero-fade mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center"
+      style="animation-delay: 0.52s;"
+    >
+      <Button href="/solucoes" variant="primary" size="md">Conhecer soluções</Button>
+      <Button href="/contato" variant="secondary" size="md">Falar com especialista</Button>
+    </div>
+
+    <!-- Setores no rodapé do hero -->
+    <p
+      class="hero-fade absolute bottom-8 left-0 right-0 text-center text-xs font-medium uppercase tracking-[0.3em] text-white/36"
+      style="animation-delay: 0.72s;"
+    >
+      Saúde&nbsp;•&nbsp;Tecnologia&nbsp;•&nbsp;Infraestrutura&nbsp;•&nbsp;Finanças&nbsp;•&nbsp;Logística
+    </p>
+  </div>
+</section>
+
+<style>
+  @keyframes heroZoom {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.18); }
+  }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-fade {
+    opacity: 0;
+    animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+</style>

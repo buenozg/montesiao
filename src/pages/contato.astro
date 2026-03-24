@@ -1,0 +1,100 @@
+---
+import CtaBand from '../components/sections/CtaBand.astro';
+import Container from '../components/ui/Container.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import { contactCards } from '../data/institutional';
+import { siteConfig } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contato | Monte Sião"
+  description="Entre em contato com a Monte Sião para oportunidades institucionais, comerciais e parcerias estratégicas."
+>
+  <section class="bg-primary text-white">
+    <Container>
+      <div class="py-20 md:py-24">
+        <span class="inline-flex rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
+          Contato institucional
+        </span>
+        <h1 class="title-display mt-7 max-w-4xl text-white">Canais para relacionamento institucional, novas frentes de negócio e parcerias estratégicas.</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/74">
+          A Monte Sião está preparada para discutir integrações, expansão operacional, novos projetos e oportunidades de colaboração entre empresas e segmentos.
+        </p>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div class="space-y-6">
+          <SectionIntro
+            eyebrow="Canais corporativos"
+            title="Uma abordagem institucional para conversas relevantes."
+            description="Apresente seu contexto, objetivo e frente de interesse. A base foi estruturada para fácil integração com o provedor de formulários escolhido pelo projeto."
+          />
+          <div class="grid gap-4">
+            {contactCards.map((item) => <article class="panel p-6"><h3 class="text-xl">{item.title}</h3><p class="mt-3 text-sm leading-7 text-text-soft">{item.description}</p><p class="mt-4 text-sm font-semibold text-primary">{item.value}</p></article>)}
+          </div>
+        </div>
+
+        <div class="panel p-8">
+          <h2 class="text-3xl">Formulário institucional</h2>
+          <p class="mt-3 text-sm leading-7 text-text-soft">
+            Estrutura pronta para integração com endpoint estático, serviço de automação ou ferramenta de CRM.
+          </p>
+          <form class="mt-8 grid gap-5" method="post">
+            <label class="grid gap-2 text-sm font-medium text-text">
+              Nome
+              <input class="h-12 rounded-2xl border border-primary/10 bg-muted/45 px-4 outline-none transition focus:border-accent" name="nome" type="text" placeholder="Seu nome" />
+            </label>
+            <div class="grid gap-5 md:grid-cols-2">
+              <label class="grid gap-2 text-sm font-medium text-text">
+                E-mail
+                <input class="h-12 rounded-2xl border border-primary/10 bg-muted/45 px-4 outline-none transition focus:border-accent" name="email" type="email" placeholder="voce@empresa.com" />
+              </label>
+              <label class="grid gap-2 text-sm font-medium text-text">
+                Telefone
+                <input class="h-12 rounded-2xl border border-primary/10 bg-muted/45 px-4 outline-none transition focus:border-accent" name="telefone" type="tel" placeholder="+55 (11) 99999-9999" />
+              </label>
+            </div>
+            <label class="grid gap-2 text-sm font-medium text-text">
+              Empresa
+              <input class="h-12 rounded-2xl border border-primary/10 bg-muted/45 px-4 outline-none transition focus:border-accent" name="empresa" type="text" placeholder="Nome da empresa" />
+            </label>
+            <label class="grid gap-2 text-sm font-medium text-text">
+              Interesse
+              <select class="h-12 rounded-2xl border border-primary/10 bg-muted/45 px-4 outline-none transition focus:border-accent" name="interesse">
+                <option>Institucional</option>
+                <option>Parceria</option>
+                <option>Comercial</option>
+                <option>Operação / solução</option>
+              </select>
+            </label>
+            <label class="grid gap-2 text-sm font-medium text-text">
+              Mensagem
+              <textarea class="min-h-36 rounded-3xl border border-primary/10 bg-muted/45 px-4 py-3 outline-none transition focus:border-accent" name="mensagem" placeholder="Descreva seu contexto e objetivo."></textarea>
+            </label>
+            <button class="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white transition hover:bg-primary-dark" type="submit">
+              Solicitar contato
+            </button>
+          </form>
+
+          <div class="mt-8 rounded-3xl border border-primary/8 bg-muted/45 p-5 text-sm leading-7 text-text-soft">
+            Contato direto: <a href={`mailto:${siteConfig.email}`} class="font-semibold text-primary">{siteConfig.email}</a> · <a href={`tel:${siteConfig.phone.replace(/\s|\(|\)|-/g, '')}`} class="font-semibold text-primary">{siteConfig.phone}</a>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <CtaBand
+    title="Vamos estruturar a próxima frente de crescimento do seu negócio."
+    description="Monte Sião apoia operações com visão institucional, leitura integrada e capacidade de execução em múltiplos segmentos."
+    primaryHref={`mailto:${siteConfig.email}`}
+    primaryLabel="Enviar e-mail institucional"
+    secondaryHref="/solucoes"
+    secondaryLabel="Ver soluções"
+  />
+</BaseLayout>

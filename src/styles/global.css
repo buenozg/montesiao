@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0f3a46;
+  --color-primary-dark: #0b2d39;
+  --color-primary-soft: #1d5563;
+  --color-accent: #d8b24a;
+  --color-accent-soft: #e7c86d;
+  --color-background: #f8f9f9;
+  --color-surface: #ffffff;
+  --color-muted: #e9eef0;
+  --color-text: #15323a;
+  --color-text-soft: #5f6f76;
+  --font-sans: "Google Sans", "Segoe UI", sans-serif;
+  --font-display: "Google Sans Display", "Google Sans", sans-serif;
+  --shadow-soft: 0 24px 60px rgba(9, 36, 45, 0.12);
+  --shadow-panel: 0 20px 45px rgba(11, 45, 57, 0.14);
+  --radius-panel: 1.5rem;
+}
+
+@theme inline {
+  --animate-orbit: orbit calc(var(--duration) * 1s) linear infinite;
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+    100% {
+      transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text font-sans antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(216, 178, 74, 0.08), transparent 28%),
+      radial-gradient(circle at right 12% top 10%, rgba(29, 85, 99, 0.12), transparent 22%),
+      linear-gradient(180deg, rgba(248, 249, 249, 1) 0%, rgba(248, 249, 249, 1) 100%);
+  }
+
+  ::selection {
+    background: rgba(216, 178, 74, 0.25);
+    color: #0b2d39;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight text-balance;
+  }
+
+  p {
+    @apply leading-7 text-pretty;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+
+  .panel {
+    @apply rounded-[--radius-panel] border border-white/60 bg-surface/92 shadow-[--shadow-soft] backdrop-blur;
+  }
+
+  .panel-dark {
+    @apply rounded-[--radius-panel] border border-white/10 bg-primary text-white shadow-[--shadow-panel];
+  }
+
+  .section-space {
+    @apply py-20 md:py-24;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent;
+  }
+
+  .title-display {
+    @apply font-display text-4xl leading-tight md:text-5xl lg:text-6xl;
+  }
+
+  .section-title {
+    @apply font-display text-3xl leading-tight md:text-4xl;
+  }
+
+  .muted-copy {
+    @apply text-base text-text-soft md:text-lg;
+  }
+
+  .nav-link {
+    @apply text-base font-medium text-white/80 hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply text-white;
+  }
+}

@@ -1,0 +1,37 @@
+---
+import Container from '../ui/Container.astro';
+import SectionIntro from '../ui/SectionIntro.astro';
+import SolutionCard from '../ui/SolutionCard.astro';
+
+interface SolutionEntry {
+  slug: string;
+  data: {
+    title: string;
+    summary: string;
+    segment: 'Saude' | 'Tecnologia' | 'Infraestrutura' | 'Financas' | 'Logistica';
+    tags: string[];
+  };
+}
+
+interface Props {
+  solutions: SolutionEntry[];
+}
+
+const { solutions } = Astro.props;
+---
+
+<section class="section-space bg-primary/[0.03]">
+  <Container>
+    <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <SectionIntro
+        eyebrow="Ecossistema de empresas e soluções"
+        title="Especialidades organizadas em um portfólio integrado e preparado para evolução."
+        description="Cada solução opera com identidade própria e aderência setorial, mas se beneficia de uma visão de grupo orientada por governança, integração e sustentação."
+      />
+      <a href="/solucoes" class="text-sm font-semibold text-primary hover:text-primary-dark">Ver todas as soluções</a>
+    </div>
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {solutions.map((solution) => <SolutionCard solution={solution} />)}
+    </div>
+  </Container>
+</section>

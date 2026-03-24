@@ -1,0 +1,51 @@
+---
+import Button from '../ui/Button.astro';
+import { footerGroups, siteConfig } from '../../data/site';
+---
+
+<footer class="mt-20 bg-primary-dark text-white">
+  <div class="shell py-16">
+    <div class="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr]">
+      <div class="space-y-5">
+        <div class="flex items-center gap-4">
+          <div class="rounded-3xl bg-white/95 px-4 py-3 shadow-lg shadow-black/10">
+            <img
+              src={`${import.meta.env.BASE_URL}images/solutions/logo_monte.svg`}
+              alt=""
+              class="h-12 w-auto sm:h-14"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.24em] text-accent-soft">Ecossistema institucional integrado</p>
+            <p class="text-sm text-white/70">{siteConfig.name}</p>
+          </div>
+        </div>
+        <p class="max-w-xl text-sm leading-7 text-white/72">
+          {siteConfig.description}
+        </p>
+        <Button href="/contato" variant="secondary">Conversar com o grupo</Button>
+      </div>
+
+      {
+        footerGroups.map((group) => (
+          <div class="space-y-4">
+            <h2 class="text-sm font-semibold uppercase tracking-[0.24em] text-accent-soft">{group.title}</h2>
+            <ul class="space-y-3 text-sm text-white/74">
+              {group.links.map((link) => <li><a href={link.href} class="hover:text-white">{link.label}</a></li>)}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
+      <p>{siteConfig.legalName} · {siteConfig.address}</p>
+      <div class="flex flex-col gap-1 md:flex-row md:gap-6">
+        <a href={`mailto:${siteConfig.email}`} class="hover:text-white">{siteConfig.email}</a>
+        <a href={`tel:${siteConfig.phone.replace(/\s|\(|\)|-/g, '')}`} class="hover:text-white">{siteConfig.phone}</a>
+      </div>
+    </div>
+  </div>
+</footer>

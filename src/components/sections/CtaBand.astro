@@ -1,0 +1,33 @@
+---
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+}
+
+const { title, description, primaryHref, primaryLabel, secondaryHref, secondaryLabel } = Astro.props;
+---
+
+<section class="section-space pt-0">
+  <Container>
+    <div class="panel-dark overflow-hidden px-6 py-10 md:px-10">
+      <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-accent-soft">Próximo passo institucional</p>
+          <h2 class="mt-4 text-3xl text-white md:text-4xl">{title}</h2>
+          <p class="mt-4 max-w-3xl text-base leading-8 text-white/72">{description}</p>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <Button href={primaryHref} variant="primary">{primaryLabel}</Button>
+          {secondaryHref && secondaryLabel && <Button href={secondaryHref} variant="secondary">{secondaryLabel}</Button>}
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

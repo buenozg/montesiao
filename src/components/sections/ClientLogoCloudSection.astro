@@ -1,0 +1,55 @@
+---
+import LogoCloud from '../shadcn-studio/blocks/logo-cloud-07/logo-cloud-07';
+
+const logoData = [
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/webflow-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.75rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/netflix-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-12',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/stackoverflow-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.125rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/shopify-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-11',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/mailchimp-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[2.375rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/paypal-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.75rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/airbnb-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.125rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/huawei-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.75rem]',
+  },
+  {
+    image: 'https://cdn.shadcnstudio.com/ss-assets/brand-logo/dropbox-icon-circle.png',
+    alt: 'Placeholder de cliente',
+    size: 'size-[3.75rem]',
+  },
+];
+---
+
+<section class="section-space border-b border-primary/6 bg-[linear-gradient(180deg,rgba(15,58,70,0.02),rgba(255,255,255,0))]">
+  <LogoCloud logos={logoData} client:visible />
+</section>

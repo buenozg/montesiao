@@ -1,0 +1,151 @@
+---
+import { getCollection, render } from 'astro:content';
+
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import Container from '../../components/ui/Container.astro';
+import IconCard from '../../components/ui/IconCard.astro';
+import StatCard from '../../components/ui/StatCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const solutions = await getCollection('solutions');
+
+  return solutions.map((solution) => ({
+    params: { slug: solution.id },
+    props: { solution },
+  }));
+}
+
+const { solution } = Astro.props;
+const { Content } = await render(solution);
+
+const segmentLabels = {
+  Saude: 'Saúde',
+  Tecnologia: 'Tecnologia',
+  Infraestrutura: 'Infraestrutura',
+  Financas: 'Finanças',
+  Logistica: 'Logística',
+} as const;
+---
+
+<BaseLayout
+  title={solution.data.seoTitle ?? `${solution.data.title} | Monte Sião`}
+  description={solution.data.seoDescription ?? solution.data.summary}
+>
+  <section class="relative overflow-hidden bg-primary text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(216,178,74,0.18),transparent_24%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.08),transparent_18%)]"></div>
+    <Container>
+      <div class="relative grid gap-10 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+        <div>
+          <span class="inline-flex rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
+            {segmentLabels[solution.data.segment]}
+          </span>
+          <h1 class="title-display mt-7 text-white">{solution.data.title}</h1>
+          <p class="mt-4 max-w-2xl text-lg leading-8 text-white/74">{solution.data.heroSummary}</p>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {solution.data.tags.map((tag) => <Badge label={tag} inverse />)}
+          </div>
+        </div>
+
+        <div class="panel-dark p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-accent-soft">Tagline institucional</p>
+          <h2 class="mt-4 text-3xl text-white">{solution.data.tagline}</h2>
+          <p class="mt-4 text-sm leading-7 text-white/72">{solution.data.description}</p>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.92fr_1.08fr]">
+        <div>
+          <span class="eyebrow">Descrição institucional</span>
+          <h2 class="section-title mt-5">{solution.data.headline}</h2>
+          <p class="muted-copy mt-5">{solution.data.description}</p>
+          <div class="mt-8 max-w-none space-y-4 text-base leading-8 text-text-soft [&_h2]:mt-8 [&_h2]:font-display [&_h2]:text-3xl [&_h2]:text-text [&_h3]:mt-6 [&_h3]:text-2xl [&_h3]:text-text [&_p]:mt-4">
+            <Content />
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          {
+            solution.data.services.map((service) => (
+              <article class="panel p-6">
+                <p class="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Frente</p>
+                <h3 class="mt-4 text-2xl">{service.title}</h3>
+                <p class="mt-4 text-sm leading-7 text-text-soft">{service.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <div class="panel-dark px-6 py-8 md:px-10">
+        <div class="flex flex-wrap gap-3">
+          {solution.data.highlights.map((item) => <Badge label={item} inverse />)}
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <span class="eyebrow">Indicadores visuais</span>
+          <h2 class="section-title mt-5">Sinais de capacidade, cobertura e especialização.</h2>
+          <p class="muted-copy mt-5">
+            Os indicadores sintetizam a proposta institucional da solução e reforçam sua posição dentro do ecossistema Monte Sião.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          {solution.data.kpis.map((item) => <StatCard value={item.value} label={item.label} />)}
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <span class="eyebrow">Diferenciais</span>
+          <h2 class="section-title mt-5">Vantagens competitivas que reforçam credibilidade, consistência e aderência setorial.</h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          {solution.data.differentials.map((item) => <IconCard {...item} />)}
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <div class="grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+        <div class="overflow-hidden rounded-[2rem] border border-primary/8 bg-primary">
+          <img
+            src={solution.data.image.src}
+            alt={solution.data.image.alt}
+            class="h-full w-full object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div class="panel p-8">
+          <span class="eyebrow">Próxima conversa</span>
+          <h2 class="section-title mt-5">{solution.data.ctaTitle}</h2>
+          <p class="muted-copy mt-4">{solution.data.ctaDescription}</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="/contato" variant="primary">{solution.data.ctaLabel}</Button>
+            <Button href="/solucoes" variant="ghost">Ver outras soluções</Button>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+</BaseLayout>

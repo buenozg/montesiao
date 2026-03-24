@@ -1,0 +1,92 @@
+---
+import CtaBand from '../components/sections/CtaBand.astro';
+import Container from '../components/ui/Container.astro';
+import IconCard from '../components/ui/IconCard.astro';
+import SectionIntro from '../components/ui/SectionIntro.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  aboutHighlights,
+  differentiators,
+  operatingModel,
+  segments,
+} from '../data/institutional';
+---
+
+<BaseLayout
+  title="Sobre a Monte Sião | Visão institucional e governança integrada"
+  description="Conheça a visão institucional da Monte Sião, sua proposta de governança unificada, operação multissetorial e modelo de integração entre competências."
+>
+  <section class="bg-primary text-white">
+    <Container>
+      <div class="grid gap-12 py-20 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <span class="inline-flex rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
+            Visão institucional
+          </span>
+          <h1 class="title-display mt-7 text-white">Governança unificada para sustentar um ecossistema multissetorial com excelência operacional.</h1>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-white/75">
+            A Monte Sião atua como holding integradora, conectando empresas, competências e processos para fortalecer serviços essenciais, apoiar crescimento e ampliar capacidade operacional com leitura estratégica consolidada.
+          </p>
+        </div>
+        <div class="panel-dark p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.24em] text-accent-soft">Proposta institucional</p>
+          <div class="mt-5 space-y-4">
+            {aboutHighlights.map((item) => <div class="rounded-2xl border border-white/10 bg-white/6 px-5 py-4 text-sm text-white/80">{item}</div>)}
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space">
+    <Container>
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <SectionIntro
+          eyebrow="Modelo operacional"
+          title="Integração entre direção estratégica, execução técnica e sustentação contínua."
+          description="O modelo da holding foi desenhado para capturar sinergias, reduzir fragmentação operacional e promover padronização em governança, compliance e desempenho."
+        />
+        <div class="grid gap-6">
+          {operatingModel.map((item) => <article class="panel p-7"><h3 class="text-2xl">{item.title}</h3><p class="mt-4 text-sm leading-7 text-text-soft">{item.description}</p></article>)}
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <SectionIntro
+        eyebrow="Atuação multissetorial"
+        title="Competências distribuídas em segmentos que se reforçam mutuamente."
+        description="Ao integrar áreas críticas, a Monte Sião amplia capilaridade, cria inteligência transversal e sustenta operações com maior resiliência."
+        centered
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+        {segments.map((segment) => <IconCard {...segment} />)}
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-space pt-0">
+    <Container>
+      <SectionIntro
+        eyebrow="Diferenciais"
+        title="Estrutura institucional pronta para responder com clareza, disciplina e escala."
+        description="Governança, integração, compliance e operação contínua são pilares que sustentam o posicionamento premium da Monte Sião."
+        centered
+      />
+      <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {differentiators.map((item) => <IconCard {...item} />)}
+      </div>
+    </Container>
+  </section>
+
+  <CtaBand
+    title="Leve sua operação para um modelo mais integrado, seguro e escalável."
+    description="Monte Sião combina visão institucional e capacidade de execução para construir relações duradouras e operações mais consistentes."
+    primaryHref="/contato"
+    primaryLabel="Falar com a holding"
+    secondaryHref="/solucoes"
+    secondaryLabel="Explorar portfólio"
+  />
+</BaseLayout>

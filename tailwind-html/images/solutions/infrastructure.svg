@@ -1,0 +1,11 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="820" fill="#0F3A46"/>
+  <circle cx="1036" cy="168" r="194" fill="#D8B24A" fill-opacity="0.18"/>
+  <circle cx="250" cy="664" r="226" fill="#1D5563" fill-opacity="0.34"/>
+  <path d="M300 580V286L600 172L900 286V580" stroke="#E9EEF0" stroke-opacity="0.82" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M472 580V430H728V580" stroke="#D8B24A" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M474 330H476M474 392H476M726 330H728M726 392H728M600 288H602M600 350H602" stroke="#E9EEF0" stroke-width="18" stroke-linecap="round"/>
+  <rect x="92" y="92" width="188" height="188" rx="44" fill="#0B2D39" stroke="white" stroke-opacity="0.14"/>
+  <text x="120" y="208" fill="white" font-family="Arial, sans-serif" font-size="68" font-weight="700">INF</text>
+  <text x="92" y="646" fill="white" font-family="Georgia, serif" font-size="72" font-weight="700">Infraestrutura Técnica</text>
+</svg>

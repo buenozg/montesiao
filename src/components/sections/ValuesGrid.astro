@@ -1,0 +1,37 @@
+---
+import Container from '../ui/Container.astro';
+import SectionIntro from '../ui/SectionIntro.astro';
+
+interface ValueItem {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  values: ValueItem[];
+}
+
+const { values } = Astro.props;
+---
+
+<section class="section-space pt-0">
+  <Container>
+    <SectionIntro
+      eyebrow="Direção institucional"
+      title="Princípios que sustentam decisões, relações e execução em todo o ecossistema."
+      description="A base institucional da Monte Sião combina visão de longo prazo, disciplina operacional e compromisso com excelência para coordenar frentes estratégicas e operacionais."
+      centered
+    />
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {
+        values.map((item) => (
+          <article class="panel h-full p-8">
+            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-accent">Monte Sião</p>
+            <h3 class="mt-4 text-2xl">{item.title}</h3>
+            <p class="mt-4 text-sm leading-7 text-text-soft">{item.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
+</section>

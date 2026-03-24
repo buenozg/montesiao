@@ -1,0 +1,56 @@
+---
+import Badge from './Badge.astro';
+import Button from './Button.astro';
+import IconGlyph from './IconGlyph.astro';
+
+interface SolutionData {
+  slug: string;
+  data: {
+    title: string;
+    summary: string;
+    segment: 'Saude' | 'Tecnologia' | 'Infraestrutura' | 'Financas' | 'Logistica';
+    tags: string[];
+  };
+}
+
+interface Props {
+  solution: SolutionData;
+}
+
+const { solution } = Astro.props;
+
+const segmentIcons = {
+  Saude: 'pulse',
+  Tecnologia: 'server',
+  Infraestrutura: 'building',
+  Financas: 'finance',
+  Logistica: 'truck',
+} as const;
+
+const segmentLabels = {
+  Saude: 'Saúde',
+  Tecnologia: 'Tecnologia',
+  Infraestrutura: 'Infraestrutura',
+  Financas: 'Finanças',
+  Logistica: 'Logística',
+} as const;
+---
+
+<article class="panel flex h-full flex-col p-6">
+  <div class="flex items-start justify-between gap-4">
+    <div class="space-y-3">
+      <Badge label={segmentLabels[solution.data.segment]} />
+      <h3 class="text-2xl">{solution.data.title}</h3>
+    </div>
+    <span class="rounded-2xl bg-primary/8 p-3 text-primary">
+      <IconGlyph name={segmentIcons[solution.data.segment]} className="size-5" />
+    </span>
+  </div>
+  <p class="mt-4 text-sm leading-7 text-text-soft">{solution.data.summary}</p>
+  <div class="mt-5 flex flex-wrap gap-2">
+    {solution.data.tags.slice(0, 3).map((tag) => <Badge label={tag} />)}
+  </div>
+  <div class="mt-8">
+    <Button href={`/solucoes/${solution.slug}`} variant="ghost">Ver solução</Button>
+  </div>
+</article>

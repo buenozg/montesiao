@@ -1,0 +1,62 @@
+---
+import Button from '../ui/Button.astro';
+import Container from '../ui/Container.astro';
+import StatCard from '../ui/StatCard.astro';
+
+interface Hero {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryCta: { href: string; label: string };
+  secondaryCta: { href: string; label: string };
+}
+
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  hero: Hero;
+  metrics: Metric[];
+}
+
+const { hero, metrics } = Astro.props;
+---
+
+<section class="relative overflow-hidden bg-primary text-white">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(216,178,74,0.18),transparent_28%),radial-gradient(circle_at_80%_18%,rgba(231,200,109,0.12),transparent_18%),radial-gradient(circle_at_70%_65%,rgba(255,255,255,0.08),transparent_24%)]"></div>
+  <div class="absolute inset-y-0 right-0 hidden w-[42%] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0))] blur-3xl lg:block"></div>
+  <Container>
+    <div class="relative grid gap-14 py-20 md:py-24 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:py-28">
+      <div class="max-w-3xl">
+        <span class="inline-flex rounded-full border border-white/12 bg-white/8 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent-soft">
+          {hero.eyebrow}
+        </span>
+        <h1 class="title-display mt-7 max-w-4xl text-white">{hero.title}</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/76">{hero.description}</p>
+        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+          <Button href={hero.primaryCta.href} variant="primary">{hero.primaryCta.label}</Button>
+          <Button href={hero.secondaryCta.href} variant="secondary">{hero.secondaryCta.label}</Button>
+        </div>
+      </div>
+
+      <div class="panel-dark relative overflow-hidden p-7">
+        <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-accent/18 blur-3xl"></div>
+        <div class="relative">
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-accent-soft">Base institucional</p>
+          <h2 class="mt-5 text-3xl leading-tight text-white">
+            Governança, integração e continuidade operacional para ambientes que exigem confiança.
+          </h2>
+          <p class="mt-4 text-sm leading-7 text-white/72">
+            A Monte Sião coordena empresas e competências com leitura centralizada de desempenho, sustentação 24/7 e visão de longo prazo.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            {metrics.map((metric) => <StatCard value={metric.value} label={metric.label} dark />)}
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>

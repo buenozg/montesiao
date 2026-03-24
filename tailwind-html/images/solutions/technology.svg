@@ -1,0 +1,13 @@
+<svg width="1200" height="820" viewBox="0 0 1200 820" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="820" fill="#0B2D39"/>
+  <circle cx="1020" cy="122" r="190" fill="#D8B24A" fill-opacity="0.18"/>
+  <circle cx="212" cy="650" r="240" fill="#1D5563" fill-opacity="0.34"/>
+  <rect x="254" y="262" width="696" height="296" rx="36" fill="#0F3A46" stroke="#E7C86D" stroke-opacity="0.3" stroke-width="2"/>
+  <rect x="318" y="324" width="248" height="24" rx="12" fill="#E9EEF0" fill-opacity="0.86"/>
+  <rect x="318" y="382" width="430" height="18" rx="9" fill="#E9EEF0" fill-opacity="0.34"/>
+  <rect x="318" y="430" width="360" height="18" rx="9" fill="#E9EEF0" fill-opacity="0.34"/>
+  <rect x="790" y="324" width="98" height="164" rx="24" fill="#D8B24A" fill-opacity="0.86"/>
+  <rect x="92" y="92" width="188" height="188" rx="44" fill="#0F3A46" stroke="white" stroke-opacity="0.14"/>
+  <text x="126" y="208" fill="white" font-family="Arial, sans-serif" font-size="70" font-weight="700">TI</text>
+  <text x="92" y="646" fill="white" font-family="Georgia, serif" font-size="72" font-weight="700">Tecnologia e Sistemas</text>
+</svg>

@@ -1,0 +1,32 @@
+---
+import Container from '../ui/Container.astro';
+import IconCard from '../ui/IconCard.astro';
+import SectionIntro from '../ui/SectionIntro.astro';
+
+interface Differential {
+  title: string;
+  description: string;
+  icon: 'shield' | 'scaling' | 'clock' | 'check';
+}
+
+interface Props {
+  differentiators: Differential[];
+}
+
+const { differentiators } = Astro.props;
+---
+
+<section class="section-space">
+  <Container>
+    <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+      <SectionIntro
+        eyebrow="Diferenciais competitivos"
+        title="Base institucional construída para confiança, expansão e continuidade."
+        description="A Monte Sião se diferencia por integrar operações, padronizar governança e sustentar serviços essenciais com visão estratégica e capacidade de execução."
+      />
+      <div class="grid gap-6 md:grid-cols-2">
+        {differentiators.map((item) => <IconCard {...item} />)}
+      </div>
+    </div>
+  </Container>
+</section>

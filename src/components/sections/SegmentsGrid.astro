@@ -1,0 +1,31 @@
+---
+import Container from '../ui/Container.astro';
+import IconCard from '../ui/IconCard.astro';
+import SectionIntro from '../ui/SectionIntro.astro';
+
+interface SegmentItem {
+  title: string;
+  description: string;
+  icon: 'pulse' | 'server' | 'building' | 'finance' | 'truck';
+}
+
+interface Props {
+  segments: SegmentItem[];
+}
+
+const { segments } = Astro.props;
+---
+
+<section class="section-space">
+  <Container>
+    <SectionIntro
+      eyebrow="Segmentos de atuação"
+      title="Frentes estratégicas que se complementam para ampliar capacidade operacional."
+      description="A Monte Sião atua em segmentos com alto nível de criticidade e exigência, conectando serviços e competências por meio de uma governança única."
+      centered
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+      {segments.map((segment) => <IconCard {...segment} />)}
+    </div>
+  </Container>
+</section>
